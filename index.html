@@ -8,7 +8,7 @@
     />
     <title>Bình Phước Explorer - Giáo dục địa phương Lớp 8</title>
 
-    <!-- Tailwind CDN -->
+    <!-- Tailwind qua CDN (phù hợp với project AI Studio ban đầu) -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Google Font -->
@@ -37,11 +37,26 @@
         background: #059669;
       }
     </style>
+
+    <!-- Import map cho các thư viện dùng trong code (nếu App.tsx/index.tsx còn dùng) -->
+    <script type="importmap">
+      {
+        "imports": {
+          "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+          "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+          "react/": "https://aistudiocdn.com/react@^19.2.0/",
+          "react": "https://aistudiocdn.com/react@^19.2.0",
+          "canvas-confetti": "https://aistudiocdn.com/canvas-confetti@^1.9.4"
+        }
+      }
+    </script>
   </head>
+
   <body>
     <div id="root"></div>
 
-    <!-- ENTRY cho Vite/React: dùng file index.tsx ở root -->
+    <!-- QUAN TRỌNG: Gọi file React entry -->
+    <!-- Vite (hoặc dev server) sẽ build từ file /index.tsx này -->
     <script type="module" src="/index.tsx"></script>
   </body>
 </html>
